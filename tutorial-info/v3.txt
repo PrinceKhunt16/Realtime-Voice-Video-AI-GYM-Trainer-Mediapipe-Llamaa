@@ -1,0 +1,24 @@
+Project Structure Deep Dive (core, detectors, services, pages, static)
+
+
+pages → UI screens (workout)
+static → assets like images, CSS
+ml_models → AI model files
+detectors → exercise detection
+core → base logic
+services → (auth, state, ui, config)
+
+
+What is __init__.py?
+
+This file makes a folder a Python package.
+__init__.py = “this folder is code, not just files””
+
+
+What are Modules & Packages?
+
+Module = a single Python file
+example: squat.py
+
+Package = a folder with __init__.py
+example: detectors/
