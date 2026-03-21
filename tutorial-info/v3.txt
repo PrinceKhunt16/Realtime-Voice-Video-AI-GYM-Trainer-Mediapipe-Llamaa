@@ -1,24 +1,57 @@
-Project Structure Deep Dive (core, detectors, services, pages, static)
+Login Form UI
 
 
-pages → UI screens (workout)
-static → assets like images, CSS
-ml_models → AI model files
-detectors → exercise detection
-core → base logic
-services → (auth, state, ui, config)
+######################################################################
+services/auth/login_wall.py
+######################################################################
+
+import streamlit as st
 
 
-What is __init__.py?
+def render_login_wall():
+    if st.session_state.get("user_id") is not None:
+        return True
+    
+    st.title("🏋️‍♂️ AI Real-time GYM Trainer")
+    st.markdown("### Welcome! Please enter a username to start.")
 
-This file makes a folder a Python package.
-__init__.py = “this folder is code, not just files””
+    with st.form("login_form", clear_on_submit=False):
+        username = st.text_input("Name (unique)", placeholder="unique name e.g. princekhunt")
+        submit_button = st.form_submit_button("Start Session", width="stretch")
+
+    if submit_button:
+        if not username:
+            st.error("Name cannot be empty.")
+            return False
+    
+        st.session_state["username"] = username
+        st.session_state["user_id"] = "1"
+
+        st.rerun()
+
+    return False
 
 
-What are Modules & Packages?
+######################################################################
+main.py
+######################################################################
 
-Module = a single Python file
-example: squat.py
+import streamlit as st
+from services.auth.login_wall import render_login_wall
 
-Package = a folder with __init__.py
-example: detectors/
+
+def main():
+    st.set_page_config(
+        page_icon="🏋️‍♀️",
+        page_title="AI Real-time GYM Coach",
+        initial_sidebar_state="expanded",
+        layout="centered"
+    )
+
+    if not render_login_wall():
+        return 
+    
+    st.write("Hello")
+
+if __name__ == "__main__":
+    main()

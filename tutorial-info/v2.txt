@@ -41,7 +41,7 @@ STEP 5: Setup .env file
 
 STEP 6: Create Basic Folder Structure
 
-mkdir core detectors services pages static ml_models
+mkdir core detectors services static ml_models
 mkdir services/auth services/coaching services/config services/persistence services/state services/tracking services/ui services/vision
 
 MAC/Linux
@@ -50,7 +50,6 @@ touch core/__init__.py
 touch detectors/__init__.py
 touch services/__init__.py
 touch ml_models/__init__.py
-touch pages/__init__.py
 touch services/vision/__init__.py
 
 Windows
@@ -59,7 +58,6 @@ type nul > core\__init__.py
 type nul > detectors\__init__.py
 type nul > services\__init__.py
 type nul > ml_models\__init__.py
-type nul > pages\__init__.py
 type nul > services\vision\__init__.py
 
 
