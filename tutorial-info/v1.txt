@@ -1,0 +1,3 @@
+https://ai-realtime-exercise-coach.streamlit.app/
+
+https://ai-realtime-exercise-coach.netlify.app/
