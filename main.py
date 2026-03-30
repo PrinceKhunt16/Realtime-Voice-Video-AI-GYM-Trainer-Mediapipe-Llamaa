@@ -177,7 +177,7 @@ def main():
     user_id = st.session_state.get("user_id", 0)
 
     if isinstance(user_id, int):
-        history_row = get_users_exercises(user_id)
+        history_rows = get_users_exercises(user_id)
 
         arr = [
             {
@@ -187,7 +187,7 @@ def main():
                 "Time (sec)": row['time'],
                 "Date": row['created_at']
             }
-            for row in history_row
+            for row in history_rows
         ]
 
         df = pd.DataFrame(arr)
