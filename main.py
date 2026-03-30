@@ -177,30 +177,28 @@ def main():
     user_id = st.session_state.get("user_id", 0)
 
     if isinstance(user_id, int):
-        history_rows = get_users_exercises(user_id)
+        history_row = get_users_exercises(user_id)
 
-        df_arr = [
+        arr = [
             {
-                "Exercise": row["exercise_name"],
-                "Reps": row["reps"],
-                "Sets": row["sets"],
-                "Time (sec)": row["time"],
-                "Date": row["created_at"]
+                "Exercise": row['exercise_name'],
+                "Reps": row['reps'],
+                "Sets": row['sets'],
+                "Time (sec)": row['time'],
+                "Date": row['created_at']
             }
-            for row in history_rows
+            for row in history_row
         ]
 
-        df = pd.DataFrame(df_arr)
+        df = pd.DataFrame(arr)
 
         if not df.empty:
             df["Date"] = pd.to_datetime(df["Date"]).dt.date
-            agg_df = df.groupby(["Exercise", "Date"]).agg(
-                {
-                    'Reps': 'sum',
-                    "Sets": 'sum',
-                    "Time (sec)": 'sum'
-                }
-            ).reset_index()
+            agg_df = df.groupby(["Exercise", "Date"]).agg({
+                "Reps": 'sum',
+                "Sets": "sum",
+                "Time (sec)": "sum"
+            }).reset_index()
             agg_df.index += 1
             st.table(agg_df, border="horizontal")
         else:
