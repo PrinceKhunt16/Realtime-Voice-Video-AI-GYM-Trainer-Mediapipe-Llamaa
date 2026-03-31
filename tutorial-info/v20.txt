@@ -1,0 +1,17 @@
+My Github Account
+https://github.com/PrinceKhunt16
+
+Landing Page Repo
+https://github.com/PrinceKhunt16/AI-Realtime-GYM-Coach-Web
+
+Main Web Repo
+https://github.com/PrinceKhunt16/Realtime-Voice-Video-AI-GYM-Trainer-Mediapipe-Llamaa
+
+My Linked Account (If you want to connect)
+https://www.linkedin.com/in/prince-khunt-linked-in/
+
+Streamlit Hosted Web
+https://ai-realtime-gym-coach.streamlit.app/
+
+Netlify Hosted Web
+https://ai-realtime-gym-coach.netlify.app/
