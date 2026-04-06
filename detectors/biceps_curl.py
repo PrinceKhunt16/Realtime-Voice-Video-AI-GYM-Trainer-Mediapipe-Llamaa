@@ -2,7 +2,7 @@ import math
 from core.base_exercise import BaseExercise
 
 
-class BicepCurlDetector(BaseExercise):
+class BicepsCurlDetector(BaseExercise):
     UP_THRESHOLD = 50
     DOWN_THRESHOLD = 160
     MIN_VISIBILITY = 0.7

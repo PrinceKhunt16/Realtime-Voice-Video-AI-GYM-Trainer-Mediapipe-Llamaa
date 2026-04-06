@@ -16,7 +16,7 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from detectors.squat import SquatDetector
 from detectors.pushup import PushUpDetector
-from detectors.biceps_curl import BicepCurlDetector
+from detectors.biceps_curl import BicepsCurlDetector
 from detectors.shoulder_press import ShoulderPressDetector
 from detectors.lunges import LungesDetector
 from services.config.workout_config import POSE_CONNECTIONS
@@ -45,7 +45,7 @@ class VideoProcessorClass(VideoProcessorBase):
         self._detectors = {
             "Squats": SquatDetector(),
             "Push-ups": PushUpDetector(),
-            "Bicep Curls (Dumbbell)": BicepCurlDetector(),
+            "Biceps Curls (Dumbbell)": BicepsCurlDetector(),
             "Shoulder Press": ShoulderPressDetector(),
             "Lunges": LungesDetector(),
         }
@@ -122,7 +122,7 @@ class VideoProcessorClass(VideoProcessorBase):
             self._draw_squats_overlays(img, metrics)
         elif ex_type == "Push-ups":
             self._draw_pushup_overlays(img, metrics)
-        elif ex_type == "Bicep Curls (Dumbbell)":
+        elif ex_type == "Biceps Curls (Dumbbell)":
             self._draw_curl_overlays(img, metrics)
         elif ex_type == "Shoulder Press":
             self._draw_press_overlays(img, metrics)
